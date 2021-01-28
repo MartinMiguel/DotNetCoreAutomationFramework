@@ -1,0 +1,4 @@
+*.[Oo]bj
+obj/
+[Bb]in
+.vs/**
