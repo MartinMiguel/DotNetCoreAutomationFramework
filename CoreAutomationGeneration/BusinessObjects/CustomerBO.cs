@@ -1,5 +1,6 @@
 ﻿using CoreAutomationGeneration.DBConnections.DataAccess;
 using NUnit.Framework;
+using System;
 
 namespace CoreAutomationGeneration.BusinessObjects
 {
@@ -8,22 +9,13 @@ namespace CoreAutomationGeneration.BusinessObjects
     /// </summary>
     public class CustomerBO
     {
-        static void Main(string[] args)
-        {
-        }
-
         [Test]
-        public void ExecuteTest()
+        public void ExecuteTestCustomerBO()
         {
+            Console.WriteLine("Execution");
             var customers = CustomerAccess.GetCustomersInfoFromDB();
             //CustomerAccess.GetMappedCustomersInfoFromDB();
             //CustomerAccess.InsertNewCustomer(7, "Adrian", "Perez", "(331)-123456", "adrian.perez@gmail.com");
-
-            //foreach (var customer in customers)
-            //{
-            //    Console.WriteLine($"{ customer.FullInfo }");
-            //}
-            //Console.ReadLine();
         }
     }
 }
