@@ -1,0 +1,12 @@
+﻿{
+  "DbConnectionStrings": {
+    "Test": {
+      "ConnectionString": "Server=34.122.109.192;Database=test_db;User Id=user1;Password=test1;",
+      "ProviderName": "System.Data.SqlClient"
+    },
+    "Sys": {
+      "ConnectionString": "Server=34.122.109.192;Database=test_db;User Id=user1;Password=test1;",
+      "ProviderName": "System.Data.SqlClient"
+    }
+  }
+}

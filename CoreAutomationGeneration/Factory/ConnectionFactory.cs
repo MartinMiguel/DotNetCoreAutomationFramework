@@ -1,6 +1,7 @@
-﻿
-using System.Configuration;
+﻿using CoreAutomationGeneration.DBConnections.DataSettings;
+using System;
 using System.Data;
+using System.Linq.Expressions;
 
 namespace CoreAutomationGeneration.Factory
 {
@@ -16,8 +17,9 @@ namespace CoreAutomationGeneration.Factory
         /// <returns>The sql client connection</returns>
         public static IDbConnection SetSqlClientConnection(string environment)
         {
-            string configurationEnvironment = ConfigurationManager.ConnectionStrings[environment].ConnectionString;
-            return new System.Data.SqlClient.SqlConnection(configurationEnvironment);
+            string connectionString = $"{nameof(DbConnectionStrings)}:{environment}:{nameof(DbConnectionStrings.ConnectionString)}";
+            string connectionStringFromJson = LoaderFactory.Instance.Configuration.GetSection(connectionString).Value;
+            return new System.Data.SqlClient.SqlConnection(connectionStringFromJson);
         }
     }
 }

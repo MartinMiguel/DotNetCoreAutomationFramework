@@ -5,17 +5,8 @@ using System;
 
 namespace CoreAutomationDefinition.PoC
 {
-    /// <summary>
-    /// ClassTest class
-    /// </summary>
-    /// <seealso cref="CoreAutomationDefinition.PoC.DriverHelper" />
     public class ClassTest : DriverHelper
     {
-        static void Main(string[] args)
-        {
-
-        }
-
         [SetUp]
         public void Initialize()
         {

@@ -71,6 +71,14 @@ namespace CoreAutomationGeneration.Helpers
             return ConnectionReadForSqlDatabase<T>(environment, sql);
         }
 
+        /// <summary>
+        /// Connections the read map for SQL database.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="environment">The environment.</param>
+        /// <param name="sql">The SQL.</param>
+        /// <param name="dynamicParams">The dynamic parameters.</param>
+        /// <returns></returns>
         public static List<T> ConnectionReadMapForSqlDatabase<T>(string environment, string sql, DynamicParameters dynamicParams) where T : class
         {
             SetPropertiesMapToDescription<T>();
