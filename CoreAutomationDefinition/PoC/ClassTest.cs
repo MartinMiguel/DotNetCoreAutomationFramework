@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using CoreAutomationDefinition.PoC.PageObjects;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -15,7 +16,7 @@ namespace CoreAutomationDefinition.PoC
             Console.WriteLine("Setup");
         }
 
-        [Test]
+        //[Test]
         public void ExecuteTest1()
         {
 
@@ -28,6 +29,20 @@ namespace CoreAutomationDefinition.PoC
             Console.WriteLine("Execution");
 
             Assert.Pass();
+        }
+
+        [Test]
+        public void LoginTest()
+        {
+            Driver.Navigate().GoToUrl("http://eaapp.somee.com/");
+
+            HomePO homePO = new HomePO();
+            LoginPO loginPO = new LoginPO();
+
+            homePO.ClickLogin();
+            loginPO.EnterUserNameAndPassword("admin", "password");
+            loginPO.ClickLogin();
+            Assert.That(homePO.IsLogOffExist(), Is.True, "Log off button did not displayed");
         }
 
         [TearDown]
